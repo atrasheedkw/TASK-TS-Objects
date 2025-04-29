@@ -28,9 +28,14 @@ function createBook(
 ): Book {
   // write your code here...
 
-  return {} as Book; // replace "{} as Book" with what you see is fit
-}
-
+  return { title, author, publishedYear, genre };
+} // replace "{} as Book" with what you see is fit
+createBook(
+  "JavaScript: The Definitive Guide",
+  "David Flanagan",
+  2020,
+  "Programming"
+);
 // DO NOT CHANGE THE LINE OF CODE BELOW (you can use it for testing your code)
 const book = createBook(
   "Hitchhiker's Guide to The Galaxy",
@@ -51,8 +56,9 @@ const book = createBook(
 function printBookTitleAndYear(book: Book): string {
   // write your code here...
 
-  return ""; // replace empty string with what you see is fit
+  return `${book.title} ${book.publishedYear}`; // replace empty string with what you see is fit
 }
+printBookTitleAndYear(book);
 
 /**
  * `addPageCount` function:
@@ -66,9 +72,10 @@ function printBookTitleAndYear(book: Book): string {
  */
 function addPageCount(book: Book, pageCount: number): Book {
   // write your code here...
-
+  book.pageCount = pageCount;
   return book;
 }
+addPageCount(book, 320);
 
 /**
  * `addISBN` function:
@@ -88,9 +95,10 @@ function addPageCount(book: Book, pageCount: number): Book {
  */
 function addISBN(book: Book, ISBN: string): Book {
   // write your code here...
-
+  book.ISBN = ISBN;
   return book;
 }
+addISBN(book, "978-3-16-148410-0");
 
 /**
  * `updatePublishedYear` function:
@@ -110,9 +118,10 @@ function addISBN(book: Book, ISBN: string): Book {
  */
 function updatePublishedYear(book: Book, newYear: number): Book {
   // write your code here...
-
+  book.publishedYear = newYear;
   return book;
 }
+updatePublishedYear(book, 2022);
 
 /**
  * `addSecondAuthor` function:
@@ -135,9 +144,10 @@ function updatePublishedYear(book: Book, newYear: number): Book {
  */
 function addSecondAuthor(book: Book, additionalAuthor: string): Book {
   // write your code here...
-
+  book.author = additionalAuthor;
   return book;
 }
+addSecondAuthor(book, "John Doe");
 
 export {
   createBook,
